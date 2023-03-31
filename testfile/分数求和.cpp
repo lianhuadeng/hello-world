@@ -23,7 +23,7 @@ int main(){
 		tmp=fenzi[i];
 		for(j=0;j<n;j++){
 			if(i==j){
-				j++;
+				continue;
 			}
 			tmp*=fenmu[j];
 		}
