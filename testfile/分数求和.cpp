@@ -1,3 +1,5 @@
+//输入几个分数并对他们求和，并用化简。最简形式是指分子分母的最大公约数为1;若最終结果的
+//分母为1，则直接用整数表示。
 #include <iostream>
 using namespace std;
 int gongyueshu(int a, int b) {
