@@ -25,11 +25,11 @@ public:
 		final=pingshi*0.4+qimo*.6;
 	}
 };
-void Sort(grade *x,int cnt){
+void sort(grade *x,int cnt){
 	int i,j;
 	grade tmp;
 	for(i=0;i<cnt-1;i++){
-		for(i=j;j<cnt-i-1;j++){
+		for(j=0;j<cnt-i-1;j++){
 			if(x[j].final<x[j+1].final){
 				tmp=x[j];
 				x[j]=x[j+1];
@@ -38,8 +38,7 @@ void Sort(grade *x,int cnt){
 		}
 	}
 }
-void printres(grade *
-	x,int cnt){
+void printres(grade *x,int cnt){
 	for(int i=0;i<cnt;i++){
 		cout<<x[i].name<<" "<<x[i].pingshi<<" "<<x[i].qimo<<" "<<x[i].final<<endl;
 	}
@@ -54,6 +53,6 @@ int main(){
 		x[cnt].cal();
 		cnt++;
 	}
-	Sort(x[100],cnt);
-	printres(x[100],cnt);
+	sort(x,cnt);
+	printres(x,cnt);
 }
