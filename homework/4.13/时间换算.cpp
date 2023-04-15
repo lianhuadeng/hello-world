@@ -12,3 +12,44 @@ UTC是世界协调时，BJT是北京时间，UTC时间相当于BJT减去8。现�
 保留十位上的0；如果小时是0而分小于10分的，则不需要保留十位上的0。
 */
 #include <iostream>
+using namespace std;
+class change{
+private:
+	int bjt_h;
+	int bjt_min;
+	int utc_h;
+	int utc_min;
+public:
+	void getime(){
+		int tmp;
+		cin>>tmp;
+		if((tmp/100)!=0){
+			bjt_h=tmp/100;
+			utc_min=tmp%100;
+		}else if((tmp/100)==0){
+			bjt_h=0;
+			utc_min=tmp%100;
+		}
+	}
+	void cal(){
+		utc_h=bjt_h-8;
+		if(utc_h<0){
+			utc_h+=24;
+		}
+	}
+	void printres(){
+		if((utc_h!=0)&&(utc_min<10&&utc_min>0)){
+			cout<<utc_h<<"0"<<utc_min;
+		}else if((utc_h!=0)&&utc_min==0){
+			cout<<utc_h<<"00";
+		}else{
+            cout<<utc_min;
+        }
+	}
+};
+int main(){
+	change x;
+	x.getime();
+	x.cal();
+	x.printres();
+}
