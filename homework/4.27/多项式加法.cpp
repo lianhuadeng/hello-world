@@ -16,15 +16,34 @@ class adding
 	int a,b;
 public:
 	void getdata(){
-		
-		cin>>a>>b;
-		int cnt=0;
-		mici[a]+=b;
+		for(int i=0;i<2;){
+			cin>>a>>b;
+			if(a==0){
+				i++;
+				mici[a]+=b;
+			}else{
+				mici[a]+=b;
+			}
+		}
+	}
+	void print(){
+		for(int i=100;i>0;i--){
+			if(mici[i]){
+				if(i!=1){
+					cout<<mici[i]<<"x"<<i<<"+";
+				}else{
+					cout<<mici[i]<<"x"<<"+";
+				}
+			}
+		}
+		cout<<mici[0];
 	}
 };
 
 int main(){
-	
+	adding x;
+	x.getdata();
+	x.print();
 
 	return 0;
 }
